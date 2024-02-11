@@ -1,10 +1,14 @@
 pipeline {
   agent any
+  // Spécifier l'outil global pour le pipeline
+  tools {
+    // Utiliser dotnet 5.0.408 pour toutes les étapes
+    dotNet 'DotNet 5.0.408'
+  }
   stages {
     stage('Build') {
       steps {
-        // sh '/usr/local/share/dotnet/dotnet build eShopOnWeb.sln'
-        sh '/bin/bash -c "/usr/local/share/dotnet/dotnet build eShopOnWeb.sln"'
+        sh 'dotnet build eShopOnWeb.sln'
       }
     }
 
