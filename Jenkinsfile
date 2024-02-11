@@ -3,7 +3,8 @@ pipeline {
   stages {
     stage('Build') {
       steps {
-        sh '/usr/local/share/dotnet/dotnet build eShopOnWeb.sln'
+        // sh '/usr/local/share/dotnet/dotnet build eShopOnWeb.sln'
+        sh '/bin/bash -c "/usr/local/share/dotnet/dotnet build eShopOnWeb.sln"'
       }
     }
 
@@ -11,7 +12,8 @@ pipeline {
       parallel {
         stage('Unit') {
           steps {
-            sh '/usr/local/share/dotnet/dotnet test tests/UnitTest'
+            // sh '/usr/local/share/dotnet/dotnet test tests/UnitTest'
+            sh '/bin/bash -c "/usr/local/share/dotnet/dotnet test tests/UnitTest"'
           }
         }
 
