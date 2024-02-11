@@ -8,7 +8,8 @@ pipeline {
   stages {
     stage('Build') {
       steps {
-        sh 'dotnet build eShopOnWeb.sln'
+        // sh 'dotnet build eShopOnWeb.sln'
+        sh '/usr/local/share/dotnet/dotnet build eShopOnWeb.sln'
       }
     }
 
